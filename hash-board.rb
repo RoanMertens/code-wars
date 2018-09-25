@@ -21,12 +21,18 @@ class GravityPuzzleEm
 end
 
 puzzle = GravityPuzzleEm.new
-a = puzzle.solve(['#', '.', '.'])
-b = puzzle.solve(['##', '.#', '#.'])
-c = puzzle.solve(['..#.#', '#.#..', '...##'])
+
+array = ['#.#.#', '..#..', '...##']
+
+box_a = puzzle.solve(['#', '.', '.'])
+box_b = puzzle.solve(['##', '.#', '#.'])
+box_c = puzzle.solve(array)
+
 puts 'First box:'
-a.each { |box| puts box }
+box_a.each { |box| puts box }
 puts 'Second box:'
-b.each { |box| puts box }
+box_b.each { |box| puts box }
+puts 'Original third box:'
+array.each { |box| puts box }
 puts 'Third box:'
-c.each { |box| puts box }
+box_c.each { |box| puts box }
