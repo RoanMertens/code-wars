@@ -6,10 +6,21 @@ def wave(str)
 
   str.length.times { flat << str }
 
-  flat.each_with_index do |string, i|
-    wave << string.gsub(string[i], string[i].upcase) unless string[i] == ' '
+  flat.each_with_index do |string, index|
+    word = ''
+    arstring = string.split('')
+    arstring.each_with_index do |let, i|
+      if let == ' '
+        word << ' '
+      elsif index == i
+        word << let.upcase
+      else
+        word << let
+      end
+    end
+    wave << word unless word == word.downcase
   end
   wave
 end
 
-p wave('str ing')
+puts wave('word fart')
