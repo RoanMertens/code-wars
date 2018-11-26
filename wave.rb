@@ -3,24 +3,15 @@ def wave(str)
   # Code here
   flat = []
   wave = []
-
   str.length.times { flat << str }
 
   flat.each_with_index do |string, index|
-    word = ''
+    w = ''
     arstring = string.split('')
-    arstring.each_with_index do |let, i|
-      if let == ' '
-        word << ' '
-      elsif index == i
-        word << let.upcase
-      else
-        word << let
-      end
-    end
-    wave << word unless word == word.downcase
+    arstring.each_with_index { |let, i| w << (index == i ? let.upcase : let) }
+    wave << w unless w == w.downcase
   end
   wave
 end
 
-puts wave('word fart')
+puts wave('word farb')
