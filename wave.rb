@@ -1,0 +1,15 @@
+# method to make an array of strings that does a wave
+def wave(str)
+  # Code here
+  flat = []
+  wave = []
+
+  str.length.times { flat << str }
+
+  flat.each_with_index do |string, i|
+    wave << string.gsub(string[i], string[i].upcase)
+  end
+  wave
+end
+
+p wave('string')
