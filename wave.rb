@@ -14,4 +14,4 @@ def wave(str)
   wave
 end
 
-puts wave('word farb')
+puts wave('aaaaaaaa')
